@@ -1,0 +1,17 @@
+{
+  "name": "cml-todoMVC",
+  "version": "0.0.1",
+  "description": "A chameleon's demo of todo list",
+  "author": "Chameleon-Team",
+  "private": true,
+  "scripts": {},
+  "license": "Apache",
+  "dependencies": {
+    "chameleon-runtime": "^0.0.1",
+    "chameleon-api": "^0.0.1",
+    "chameleon-store": "^0.0.1",
+    "cml-ui": "^0.0.1",
+    "cml-ui-builtin": "^0.0.1",
+    "chameleon-bridge": "^0.0.1"
+  }
+}
