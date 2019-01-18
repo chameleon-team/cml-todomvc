@@ -1,6 +1,5 @@
 <template>
   <page title="TodoMVC">
-    <view class="page-container">
       <scroller height="{{-1}}">
         <view class="scroller-wrap">
           <text class="title">{{title}}</text>
@@ -45,7 +44,6 @@
           </view>
         </view>
       </scroller>
-    </view>
   </page>
 </template>
 

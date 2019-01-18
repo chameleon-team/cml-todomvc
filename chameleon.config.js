@@ -1,6 +1,6 @@
 
 // 设置静态资源的线上路径
-const publicPath = 'https://www.static.chameleon.com/cml';
+const publicPath = 'https://beatles-chameleon.github.io/cml-todomvc/dist';
 // 设置api请求前缀
 const apiPrefix = 'https://api.chameleon.com';
 
@@ -27,7 +27,7 @@ cml.config.merge({
     },
     build: {
       analysis: false,
-      publicPath: `${publicPath}/web`,
+      publicPath: `${publicPath}/web/`,
       apiPrefix
     }
   },
@@ -35,11 +35,12 @@ cml.config.merge({
     dev: {
     },
     build: {
-      publicPath: `${publicPath}/weex`,
-      apiPrefix
+      publicPath: `${publicPath}/weex/`,
+      apiPrefix,
+      hash: false
     },
     custom: {
-      publicPath: `${publicPath}/wx`,
+      publicPath: `${publicPath}/wx/`,
       apiPrefix
     }
   }

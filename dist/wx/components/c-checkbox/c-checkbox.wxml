@@ -1,0 +1,3 @@
+<view class="checkbox-wrap  cml-base cml-view" style="{{wrapStyle}}" bindtap="_cmlEventProxy" data-eventtap="click">
+  <view class="box  cml-base cml-view" style="{{boxStyle}}"></view>
+</view>

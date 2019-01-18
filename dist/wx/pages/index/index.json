@@ -1,0 +1,12 @@
+{
+    "usingComponents": {
+        "c-checkbox": "./../../components/c-checkbox/c-checkbox",
+        "c-todoitem": "./../../components/c-todoitem/c-todoitem",
+        "cml-buildin-input": "/npm/chameleon-ui-builtin/components/input/input",
+        "cml-buildin-page": "/npm/chameleon-ui-builtin/components/page/page",
+        "cml-buildin-scroller": "/npm/chameleon-ui-builtin/components/scroller/scroller"
+    },
+    "navigationBarTitleText": "index",
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#E2E2E2"
+}

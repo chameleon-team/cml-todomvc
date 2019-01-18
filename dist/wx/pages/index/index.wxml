@@ -1,0 +1,28 @@
+<cml-buildin-page title="TodoMVC" class=" cml-base cml-page">
+    <cml-buildin-scroller height="{{-1}}" class=" cml-base cml-scroller">
+      <view class="scroller-wrap  cml-base cml-view">
+        <text class="title  cml-base cml-text">{{title}}</text>
+        <view class="main  cml-base cml-view">
+          <view class="input-wrap border-bottom-1px  cml-base cml-view">
+            <cml-buildin-input class="input-area  cml-base cml-input" placeholder="What needs to be done?" c-style="{{inputStyle}}" type="text" value="{{value}}" bindinput="_cmlEventProxy" data-eventinput="inputHandle" bindblur="_cmlEventProxy" data-eventblur="addHandle" />
+            <view class="add-btn  cml-base cml-view" bindtap="_cmlEventProxy" data-eventtap="addHandle">
+              <view class="black-arrow  cml-base cml-view" style="{{btnStyle}}"></view>
+              <view class="white-arrow  cml-base cml-view"></view>
+            </view>
+          </view>
+          <view class="list-wrap  cml-base cml-view">
+            <c-todoitem class="border-bottom-1px  cml-base cml-c-todoitem" wx:for="{{showTodos}}" wx:key="{{todoLength + index}}" completed="{{item.completed}}" index="{{item.index}}" text="{{item.text}}" bindchangestatus="_cmlEventProxy" data-eventchangestatus="changeStatus" binddelete="_cmlEventProxy" data-eventdelete="delete" bindtop="_cmlEventProxy" data-eventtop="top"></c-todoitem>
+          </view>
+          <text class="count  cml-base cml-text">{{countText}}</text>
+          <view class="option-wrap  cml-base cml-view">
+            <view class="filter  cml-base cml-view">
+              <text class="{{filter === 0 ? 'filter-active' : 'filter-default'}}  cml-base cml-text" bindtap="_cmlEventProxy" data-eventtap="changeFilter0">All</text>
+              <text class="{{filter === 1 ? 'filter-active' : 'filter-default'}}  cml-base cml-text" bindtap="_cmlEventProxy" data-eventtap="changeFilter1">Active</text>
+              <text class="{{filter === 2 ? 'filter-active' : 'filter-default'}}  cml-base cml-text" bindtap="_cmlEventProxy" data-eventtap="changeFilter2">Completed</text>
+            </view>
+            <text class="clear-completed  cml-base cml-text" bindtap="_cmlEventProxy" data-eventtap="clear">Clear completed</text>
+          </view>
+        </view>
+      </view>
+    </cml-buildin-scroller>
+</cml-buildin-page>
