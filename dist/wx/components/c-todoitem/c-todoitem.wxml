@@ -1,9 +1,0 @@
-<view class="wrap border-bottom-1px  cml-base cml-view">
-  <view class="checkbox-wrap  cml-base cml-view">
-    <c-checkbox width="{{40}}" checked="{{completed}}" bindcheckclick="_cmlEventProxy" data-eventcheckclick="checkclick" class=" cml-base cml-c-checkbox"></c-checkbox>
-  </view>
-  <text class="{{completed ? 'completed-show' : 'text-show'}}  cml-base cml-text" bindtap="_cmlEventProxy" data-eventtap="checkclick">{{text}}</text>
-  <view class="delete-btn  cml-base cml-view" bindtap="_cmlEventProxy" data-eventtap="delete">
-    <image src="{{closeImg}}" style="width:30rpx;height:30rpx" class=" cml-base cml-image" />
-  </view>
-</view>
