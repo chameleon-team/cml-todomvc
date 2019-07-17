@@ -2,16 +2,16 @@
   <page title="TodoMVC">
       <scroller height="{{-1}}">
         <view class="scroller-wrap">
-          <text class="title">{{title}}</text>
+          <view class="title" c-bind:tap="handleClick">handleClick</view>
+          <text class="title" bindtap="handleClick">{{title}}</text>
           <view class="main">
             <view class="input-wrap border-bottom-1px">
               <input class="input-area"
                           placeholder="What needs to be done?"
                           c-style="{{inputStyle}}"
-                          type="text"
                           value="{{value}}"
                           c-bind:input="inputHandle"
-                          c-bind:blur="addHandle" />
+                          c-bind:blur="addHandle" ></input>
               <view class="add-btn" c-bind:tap="addHandle">
                 <view class="black-arrow" style="{{btnStyle}}"></view>
                 <view class="white-arrow"></view>
@@ -55,7 +55,7 @@ const {mapGetters, mapMutations, mapActions, mapState} = store;
 import  getterTypes from '../../store/getter-types.js';
 import  mutationTypes from '../../store/mutation-types.js';
 import  actionTypes from '../../store/action-types.js';
-import cml from 'chameleon-api';
+import cml from 'cml-tt-api';
 class Index  {
   data = {
     title: 'todos',
@@ -126,6 +126,9 @@ class Index  {
 
   }
   methods = {
+    handleClick(){
+      console.log('this',this)
+    },
     ...mapActions([
       actionTypes.INDEX_ADD_TODOS,
       actionTypes.INDEX_CHANGE_TODOS_STATUS,
@@ -176,7 +179,10 @@ class Index  {
   beforeMount(res) {
   }
   mounted() {
+    debugger;
+    console.log('this',this)
     cml.getSystemInfo().then((info)=>{
+      console.log('info',info)
       this.winHeight = Number(info.viewportHeight)
     })
   }
