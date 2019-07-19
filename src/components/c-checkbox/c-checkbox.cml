@@ -24,7 +24,6 @@ class CCheckbox   {
 
   computed = {
     wrapStyle() {
-      debugger;
       return this.$cmlStyle({
         'width': this.width  + 'cpx',
         'height': this.width  + 'cpx',

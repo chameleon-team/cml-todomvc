@@ -179,7 +179,6 @@ class Index  {
   beforeMount(res) {
   }
   mounted() {
-    debugger;
     console.log('this',this)
     cml.getSystemInfo().then((info)=>{
       console.log('info',info)
