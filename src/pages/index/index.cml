@@ -2,8 +2,7 @@
   <page title="TodoMVC">
       <scroller height="{{-1}}">
         <view class="scroller-wrap">
-          <view class="title" c-bind:tap="handleClick">handleClick</view>
-          <text class="title" bindtap="handleClick">{{title}}</text>
+          <text class="title">{{title}}</text>
           <view class="main">
             <view class="input-wrap border-bottom-1px">
               <input class="input-area"
@@ -126,9 +125,7 @@ class Index  {
 
   }
   methods = {
-    handleClick(){
-      console.log('this',this)
-    },
+    
     ...mapActions([
       actionTypes.INDEX_ADD_TODOS,
       actionTypes.INDEX_CHANGE_TODOS_STATUS,
