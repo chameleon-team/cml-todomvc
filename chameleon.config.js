@@ -4,36 +4,40 @@ const publicPath = 'https://beatles-chameleon.github.io/cml-todomvc/dist';
 // 设置api请求前缀
 const apiPrefix = 'https://api.chameleon.com';
 const path = require('path');
+
 cml.config.merge({
-  templateLang: 'cml',
-  templateType: 'html',
-  // builtinNpmName: 'cml-tt-ui-builtin',
+  templateLang: "cml",
+  templateType: "html",
+  builtinNpmName: 'cml-quickapp-ui-builtin',
   extPlatform: {
-    tt: 'cml-tt-plugin',
+    quickapp: 'cml-quickapp-plugin',
   },
   babelPath: [
-    path.join(__dirname,'node_modules/cml-tt-ui-builtin'),
-    path.join(__dirname,'node_modules/cml-tt-runtime'),
-    path.join(__dirname,'node_modules/cml-tt-api'),
-    path.join(__dirname,'node_modules/cml-tt-ui'),
-    path.join(__dirname,'node_modules/cml-tt-store'),
-    path.join(__dirname,'node_modules/cml-tt-mixins'),
+    path.join(__dirname,'node_modules/cml-quickapp-ui-builtin'),
+    path.join(__dirname,'node_modules/cml-quickapp-runtime'),
+    path.join(__dirname,'node_modules/cml-quickapp-api'),
+    path.join(__dirname,'node_modules/cml-quickapp-ui'),
+    path.join(__dirname,'node_modules/cml-quickapp-store'),
+    path.join(__dirname,'node_modules/cml-quickapp-mixins'),
     path.join(__dirname,'node_modules/mobx'),
   ],
-  baseStyle:{
-    wx: true,
-    web: true,
-    weex: true,
-    alipay: true,
-    baidu: true,
-    qq: true,
-    tt:true,
-  },
-  platforms: ['web', 'weex', 'wx','tt'],
+  platforms: ["web","weex","wx","alipay","baidu", "quickapp"],
   buildInfo: {
-    wxAppId: '123456',
-    wxEntryPage: '',
-    webPath: 'https://api.chameleon.com/h5/index'
+    wxAppId: '123456'
+  },
+  baseStyle: {
+    quickapp: true
+  },
+  quickapp: {
+    dev: {
+      // moduleIdType: 'name',
+      minimize: false,
+      increase: true
+    },
+    build: {
+      minimize: true,
+      hash: false
+    }
   },
   wx: {
     dev: {
@@ -58,8 +62,7 @@ cml.config.merge({
     },
     build: {
       publicPath: `${publicPath}/weex/`,
-      apiPrefix,
-      hash: false
+      apiPrefix
     },
     custom: {
       publicPath: `${publicPath}/wx/`,
@@ -67,4 +70,3 @@ cml.config.merge({
     }
   }
 })
-
